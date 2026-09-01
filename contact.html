@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact North Star Bakery or request a pre-order for neighborhood pickup.">
+    <title>North Star Bakery | Contact and Pre-Order</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="brand-row">
+                <a href="index.html"><img src="bakery-logo_c.png" alt="North Star Bakery logo"></a>
+                <h1>Contact and Pre-Order</h1>
+            </div>
+            <nav aria-label="Primary navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html" aria-current="page">Contact and Pre-Order</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section>
+            <p class="eyebrow">Plan your pickup</p>
+            <h2>We Would Love to Hear from You</h2>
+            <div class="notice">
+                <p><strong>Please note:</strong> Submitting this form is a request and does not confirm an order. We will follow up by email to confirm availability, quantities, pickup timing, and allergy information.</p>
+            </div>
+        </section>
+
+        <section class="contact-grid">
+            <div class="card">
+                <h2>Before You Send</h2>
+                <p>Tell us what you would like, how many you need, and when you hope to pick it up. We welcome general questions, celebration orders, and requests for our daily breads and pastries.</p>
+                <p>Allergy notes help us understand your needs, but our kitchen handles common allergens. We will discuss what we can safely prepare when we reply.</p>
+            </div>
+
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Your Contact Information</legend>
+                    <div class="field">
+                        <label for="name">Full name:</label>
+                        <input type="text" id="name" name="name" required minlength="2" autocomplete="name">
+                    </div>
+                    <div class="field">
+                        <label for="email">Email address:</label>
+                        <input type="email" id="email" name="email" required autocomplete="email">
+                    </div>
+                    <div class="field">
+                        <label for="pickup-date">Requested pickup date:</label>
+                        <input type="date" id="pickup-date" name="pickup-date" required>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Request Details</legend>
+                    <div class="field">
+                        <label for="request-type">Request type:</label>
+                        <select id="request-type" name="request-type" required>
+                            <option value="">Choose one</option>
+                            <option value="pre-order">Pre-order request</option>
+                            <option value="general-question">General question</option>
+                            <option value="event">Event or large order</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="item-details">Item details and quantities:</label>
+                        <textarea id="item-details" name="item-details" rows="6" required minlength="5" maxlength="500" placeholder="Example: Two Signature Loaves and six butter croissants"></textarea>
+                    </div>
+                    <div class="field">
+                        <label for="allergy-notes">Allergy notes:</label>
+                        <textarea id="allergy-notes" name="allergy-notes" rows="4" maxlength="300" placeholder="List any allergies or write none"></textarea>
+                    </div>
+                </fieldset>
+                <button type="submit">Send Request</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p>&copy; 2026 North Star Bakery. Handmade with care for our community.</p>
+            <p><a href="index.html">Return to the home page</a></p>
+        </div>
+    </footer>
+</body>
+</html>
