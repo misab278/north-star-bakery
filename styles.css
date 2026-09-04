@@ -216,7 +216,7 @@ button:focus-visible {
 }
 
 .card {
-    flex: 1 1 0;
+    flex: 1 1 auto;
     background: var(--cream);
 }
 
@@ -232,6 +232,13 @@ button:focus-visible {
 .media-frame img,
 .media-frame video {
     width: 100%;
+    height: auto;
+}
+
+.media-frame video {
+    aspect-ratio: 16 / 9;
+    background: var(--charcoal);
+    object-fit: cover;
 }
 
 figure {
