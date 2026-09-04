@@ -6,6 +6,7 @@
     <meta name="description" content="Contact North Star Bakery or request a pre-order for neighborhood pickup.">
     <title>North Star Bakery | Contact and Pre-Order</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -42,20 +43,24 @@
                 <p>Allergy notes help us understand your needs, but our kitchen handles common allergens. We will discuss what we can safely prepare when we reply.</p>
             </div>
 
-            <form action="#" method="post">
+            <form id="preorder-form" action="#" method="post" novalidate>
+                <p id="draft-restored" class="restored-message" role="status" hidden>Saved request details were restored from this browser.</p>
                 <fieldset>
                     <legend>Your Contact Information</legend>
                     <div class="field">
                         <label for="name">Full name:</label>
-                        <input type="text" id="name" name="name" required minlength="2" autocomplete="name">
+                        <input type="text" id="name" name="name" required minlength="2" autocomplete="name" aria-describedby="name-error">
+                        <span id="name-error" class="error-message" aria-live="polite"></span>
                     </div>
                     <div class="field">
                         <label for="email">Email address:</label>
-                        <input type="email" id="email" name="email" required autocomplete="email">
+                        <input type="email" id="email" name="email" required autocomplete="email" aria-describedby="email-error">
+                        <span id="email-error" class="error-message" aria-live="polite"></span>
                     </div>
                     <div class="field">
                         <label for="pickup-date">Requested pickup date:</label>
-                        <input type="date" id="pickup-date" name="pickup-date" required>
+                        <input type="date" id="pickup-date" name="pickup-date" required aria-describedby="pickup-date-error">
+                        <span id="pickup-date-error" class="error-message" aria-live="polite"></span>
                     </div>
                 </fieldset>
 
@@ -63,23 +68,29 @@
                     <legend>Request Details</legend>
                     <div class="field">
                         <label for="request-type">Request type:</label>
-                        <select id="request-type" name="request-type" required>
+                        <select id="request-type" name="request-type" required aria-describedby="request-type-error">
                             <option value="">Choose one</option>
                             <option value="pre-order">Pre-order request</option>
                             <option value="general-question">General question</option>
                             <option value="event">Event or large order</option>
                         </select>
+                        <span id="request-type-error" class="error-message" aria-live="polite"></span>
                     </div>
                     <div class="field">
                         <label for="item-details">Item details and quantities:</label>
-                        <textarea id="item-details" name="item-details" rows="6" required minlength="5" maxlength="500" placeholder="Example: Two Signature Loaves and six butter croissants"></textarea>
+                        <textarea id="item-details" name="item-details" rows="6" required minlength="10" maxlength="500" placeholder="Example: Two Signature Loaves and six butter croissants" aria-describedby="item-details-error"></textarea>
+                        <span id="item-details-error" class="error-message" aria-live="polite"></span>
                     </div>
                     <div class="field">
                         <label for="allergy-notes">Allergy notes:</label>
                         <textarea id="allergy-notes" name="allergy-notes" rows="4" maxlength="300" placeholder="List any allergies or write none"></textarea>
                     </div>
                 </fieldset>
-                <button type="submit">Send Request</button>
+                <div class="form-actions">
+                    <button type="submit">Review Request</button>
+                    <button id="clear-draft" class="secondary-button" type="button">Clear saved details</button>
+                </div>
+                <p id="form-status" class="status-message" role="status" aria-live="polite"></p>
             </form>
         </section>
     </main>

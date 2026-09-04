@@ -6,6 +6,7 @@
     <meta name="description" content="Browse North Star Bakery's signature loaf, daily breads, pastries, and sweets.">
     <title>North Star Bakery | Products</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -38,6 +39,7 @@
                 <div class="card">
                     <h3>Crackling crust, tender crumb</h3>
                     <p>Our namesake bread has a gentle tang and an open interior. It is equally at home beside a bowl of soup, under a layer of butter, or at the center of a shared meal.</p>
+                    <button class="favorite-button" type="button" data-product-id="signature-loaf">Save Signature Loaf</button>
                     <p><a class="button-link" href="contact.html">Request a loaf</a></p>
                 </div>
             </div>
@@ -53,6 +55,7 @@
                     <li><strong>Rosemary Sea Salt Focaccia:</strong> olive oil-rich bread finished with herbs</li>
                     <li><strong>Classic Baguette:</strong> crisp, light, and perfect for sharing</li>
                 </ul>
+                <button class="favorite-button" type="button" data-product-id="focaccia">Save Focaccia</button>
             </article>
             <article class="card">
                 <h2>Pastries and Sweets</h2>
@@ -62,8 +65,18 @@
                     <li><strong>Morning Bun:</strong> cinnamon, citrus, and caramelized sugar</li>
                     <li><strong>Community Cookie:</strong> a rotating flavor inspired by our neighbors</li>
                 </ul>
+                <button class="favorite-button" type="button" data-product-id="butter-croissant">Save Butter Croissant</button>
                 <p>Selections may change with the season and ingredient availability. For larger quantities or a specific pickup date, submit a pre-order request.</p>
             </article>
+        </section>
+
+        <section id="favorites" class="favorites-panel card" aria-labelledby="favorites-heading">
+            <p class="eyebrow">Remembered on this device</p>
+            <h2 id="favorites-heading">My Bakery Favorites</h2>
+            <p>Save items while you browse. Your list will still be here when you return, making it easier to prepare a pre-order.</p>
+            <ul id="favorites-list" class="favorites-list"></ul>
+            <p id="favorites-status" class="status-message" role="status" aria-live="polite"></p>
+            <button id="clear-favorites" class="secondary-button" type="button">Clear saved favorites</button>
         </section>
     </main>
 
